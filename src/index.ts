@@ -1,8 +1,10 @@
+import * as express from 'express'
+
 import { Client } from 'discord.js'
 
-const app = new Client({ intents: [] })
+const client = new Client({ intents: [] })
 
-app.on('ready', (client) => {
+client.on('ready', (client) => {
   console.log('started')
 
   for (const key of client.guilds.cache) {
@@ -10,4 +12,14 @@ app.on('ready', (client) => {
   }
 })
 
-app.login(process.env.DISCORD_TOKEN)
+client.login(process.env.DISCORD_TOKEN)
+
+const app = express()
+
+app.get('/', (req, res) => {
+  res.status(200).send('ok')
+})
+
+app.listen(process.env.PORT, () => {
+  console.log(`listening on port ${process.env.PORT}`)
+})
