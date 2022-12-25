@@ -5,6 +5,8 @@ WORKDIR /usr/src/app
 
 COPY ./package.json /usr/src/app/
 
+RUN npm i -g typescript
+
 RUN npm install
 RUN npm run build
 
