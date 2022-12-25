@@ -1,0 +1,15 @@
+{
+  "name": "sure-bot",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "repository": "https://github.com/LucasVinicius314/sure-bot.git",
+  "author": "Lucas Coelho <58010418+LucasVinicius314@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.17"
+  },
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc"
+  }
+}
